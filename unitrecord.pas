@@ -25,6 +25,7 @@ type
     labelBuyer: TLabel;
     labelNumber: TLabel;
     labelDate: TLabel;
+    procedure buttonCloseClick(Sender: TObject);
     procedure comboBoxExBuyerChange(Sender: TObject);
   private
 
@@ -46,11 +47,17 @@ uses unitMain;
 { TformRecord }
 
 procedure TformRecord.comboBoxExBuyerChange(Sender: TObject);
-
-
-
 begin
   currentUser := comboBoxExBuyer.ItemIndex;
+end;
+
+
+
+
+
+procedure TformRecord.buttonCloseClick(Sender: TObject);
+begin
+  Close();
 end;
 
 end.

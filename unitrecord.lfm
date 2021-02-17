@@ -120,6 +120,7 @@ object formRecord: TformRecord
     Top = 175
     Width = 80
     Caption = 'abbruch'
+    OnClick = buttonCloseClick
     TabOrder = 6
   end
 end
