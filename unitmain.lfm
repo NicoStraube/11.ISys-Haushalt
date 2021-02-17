@@ -6,6 +6,7 @@ object formMain: TformMain
   Caption = 'Haushaltsbuch'
   ClientHeight = 359
   ClientWidth = 864
+  OnCreate = FormCreate
   LCLVersion = '2.0.10.0'
   object stringGrid: TStringGrid
     Left = 32
@@ -42,6 +43,7 @@ object formMain: TformMain
     Top = 32
     Width = 144
     Caption = 'Einkaufsliste laden'
+    OnClick = buttonLoadFileClick
     TabOrder = 1
   end
   object buttonSaveFile: TButton
