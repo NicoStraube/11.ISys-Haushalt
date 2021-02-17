@@ -1,0 +1,95 @@
+object formMain: TformMain
+  Left = 581
+  Height = 359
+  Top = 185
+  Width = 864
+  Caption = 'Haushaltsbuch'
+  ClientHeight = 359
+  ClientWidth = 864
+  LCLVersion = '2.0.10.0'
+  object stringGrid: TStringGrid
+    Left = 32
+    Height = 296
+    Top = 32
+    Width = 624
+    ColCount = 6
+    Columns = <    
+      item
+        Title.Caption = 'Nr.'
+      end    
+      item
+        Title.Caption = 'Datum'
+      end    
+      item
+        Title.Caption = 'Einkäufer'
+      end    
+      item
+        Title.Caption = 'Kaufbetrag'
+      end    
+      item
+        Title.Caption = 'Bemerkungen'
+      end    
+      item
+        Title.Caption = 'Summe der Einkäufe'
+      end>
+    FixedCols = 0
+    RowCount = 1
+    TabOrder = 0
+  end
+  object buttonLoadFile: TButton
+    Left = 688
+    Height = 25
+    Top = 32
+    Width = 144
+    Caption = 'Einkaufsliste laden'
+    TabOrder = 1
+  end
+  object buttonSaveFile: TButton
+    Left = 688
+    Height = 25
+    Top = 64
+    Width = 144
+    Caption = 'Einkaufsliste sichern'
+    TabOrder = 2
+  end
+  object buttonRecord: TButton
+    Left = 688
+    Height = 25
+    Top = 112
+    Width = 144
+    Caption = 'Einkauf erfassen'
+    TabOrder = 3
+  end
+  object buttonCalculate: TButton
+    Left = 688
+    Height = 25
+    Top = 160
+    Width = 144
+    Caption = 'Auswertung gesamt'
+    TabOrder = 4
+  end
+  object buttonCalculateOne: TButton
+    Left = 688
+    Height = 25
+    Top = 192
+    Width = 144
+    Caption = 'Auswertung pro Person'
+    TabOrder = 5
+  end
+  object buttonClose: TButton
+    Left = 688
+    Height = 25
+    Top = 303
+    Width = 144
+    Caption = 'Schließen'
+    TabOrder = 6
+  end
+  object openDialog: TOpenDialog
+    Left = 712
+    Top = 232
+  end
+  object saveDialog: TSaveDialog
+    Left = 784
+    Top = 232
+  end
+end
