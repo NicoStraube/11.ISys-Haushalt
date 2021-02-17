@@ -1,0 +1,125 @@
+object formRecord: TformRecord
+  Left = 508
+  Height = 218
+  Top = 237
+  Width = 310
+  Caption = 'Einkauf erfassen'
+  ClientHeight = 218
+  ClientWidth = 310
+  LCLVersion = '2.0.10.0'
+  object labelNumber: TLabel
+    Left = 16
+    Height = 15
+    Top = 24
+    Width = 51
+    Caption = 'Nummer:'
+    ParentColor = False
+  end
+  object editNumber: TEdit
+    Left = 104
+    Height = 23
+    Top = 16
+    Width = 104
+    Enabled = False
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object labelDate: TLabel
+    Left = 16
+    Height = 15
+    Top = 56
+    Width = 39
+    Caption = 'Datum:'
+    ParentColor = False
+  end
+  object dateEdit: TDateEdit
+    Left = 104
+    Height = 23
+    Top = 48
+    Width = 104
+    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+    DateOrder = doNone
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Flat = True
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object labelBuyer: TLabel
+    Left = 16
+    Height = 15
+    Top = 88
+    Width = 52
+    Caption = 'Einkäufer:'
+    ParentColor = False
+  end
+  object comboBoxExBuyer: TComboBoxEx
+    Left = 104
+    Height = 22
+    Top = 80
+    Width = 104
+    ItemHeight = 16
+    ItemsEx = <    
+      item
+        Caption = 'Anika'
+      end    
+      item
+        Caption = 'Florian'
+      end    
+      item
+        Caption = 'Julia'
+      end    
+      item
+        Caption = 'Sten'
+      end>
+    OnChange = comboBoxExBuyerChange
+    TabOrder = 2
+  end
+  object labelPrice: TLabel
+    Left = 16
+    Height = 15
+    Top = 120
+    Width = 61
+    Caption = 'Kaufbetrag:'
+    ParentColor = False
+  end
+  object floatSpinEditPrice: TFloatSpinEdit
+    Left = 104
+    Height = 23
+    Top = 112
+    Width = 104
+    Increment = 0.5
+    TabOrder = 3
+  end
+  object labelDescription: TLabel
+    Left = 16
+    Height = 15
+    Top = 152
+    Width = 77
+    Caption = 'Bemerkungen:'
+    ParentColor = False
+  end
+  object editDescription: TEdit
+    Left = 104
+    Height = 23
+    Top = 144
+    Width = 192
+    TabOrder = 4
+  end
+  object buttonSubmit: TButton
+    Left = 104
+    Height = 25
+    Top = 176
+    Width = 80
+    Caption = 'übernehmen'
+    TabOrder = 5
+  end
+  object buttonClose: TButton
+    Left = 216
+    Height = 25
+    Top = 175
+    Width = 80
+    Caption = 'abbruch'
+    TabOrder = 6
+  end
+end
