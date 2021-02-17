@@ -52,6 +52,7 @@ object formMain: TformMain
     Top = 64
     Width = 144
     Caption = 'Einkaufsliste sichern'
+    OnClick = buttonSaveFileClick
     TabOrder = 2
   end
   object buttonRecord: TButton
@@ -84,6 +85,7 @@ object formMain: TformMain
     Top = 303
     Width = 144
     Caption = 'Schließen'
+    OnClick = buttonCloseClick
     TabOrder = 6
   end
   object openDialog: TOpenDialog

@@ -21,7 +21,9 @@ type
     openDialog: TOpenDialog;
     saveDialog: TSaveDialog;
     stringGrid: TStringGrid;
+    procedure buttonCloseClick(Sender: TObject);
     procedure buttonLoadFileClick(Sender: TObject);
+    procedure buttonSaveFileClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
   var
@@ -86,13 +88,50 @@ begin
 
       CloseFile(fileToOpen);
       stringGrid.AutoSizeColumns();
-      ShowMessage(IntToStr(stringGrid.RowCount - 1) + ' Datensätze geladen.');
-
+      ShowMessage(IntToStr(stringGrid.RowCount - 1) + ' Datensätze aus Datei ' +
+        openDialog.FileName + ' geladen.');
     end;
   except
     CloseFile(fileToOpen);
     ShowMessage('Es trat ein Fehler beim Einlesen der Datei aus.');
   end;
+end;
+
+procedure TformMain.buttonSaveFileClick(Sender: TObject);
+var
+  cellIndexX, cellIndexY: integer;
+
+begin
+  try
+    if (saveDialog.Execute) then
+    begin
+      AssignFile(fileToSave, saveDialog.FileName);
+      Rewrite(fileToSave);
+
+      for cellIndexY := 1 to stringGrid.RowCount - 1 do
+      begin
+        for cellIndexX := 0 to stringGrid.ColCount - 1 do
+        begin
+          if (cellIndexX <> (stringGrid.ColCount - 1)) then
+            Write(fileToSave, stringGrid.cells[cellIndexX, cellIndexY] + ';');
+        end;
+        WriteLn(fileToSave);
+      end;
+
+      CloseFile(fileToSave);
+      ShowMessage(IntToStr(stringGrid.RowCount - 1) + ' Datensätze in Datei ' +
+        saveDialog.FileName + ' gespeichert.');
+    end;
+  except
+    CloseFile(fileToSave);
+    ShowMessage('Es trat ein Fehler beim Speichern der Datei auf.');
+  end;
+end;
+
+
+procedure TformMain.buttonCloseClick(Sender: TObject);
+begin
+  Close();
 end;
 
 end.
