@@ -18,6 +18,7 @@
         <ComponentName Value="formMain"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitMain"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="25"/>
         <CursorPos Y="133"/>
         <FoldState Value=" T3i5033 piejB033"/>
@@ -47,146 +48,34 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitRecord"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="61"/>
-        <CursorPos X="45" Y="90"/>
-        <FoldState Value=" T3jE03'"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="21"/>
+        <CursorPos Y="56"/>
+        <FoldState Value=" T3i6032P"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="..\11.ISys-Haushalt_\unitrecord.pas"/>
         <UnitName Value="unitRecord"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
         <CursorPos X="8" Y="102"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit5>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="3" HistoryIndex="2">
       <Position1>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="34" Column="5"/>
-      </Position1>
-      <Position2>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="33" Column="5"/>
-      </Position2>
-      <Position3>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="34" Column="5"/>
-      </Position3>
-      <Position4>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="35" Column="5"/>
-      </Position4>
-      <Position5>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="37" Column="5"/>
-      </Position5>
-      <Position6>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="36" Column="5"/>
-      </Position6>
-      <Position7>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="37" Column="5"/>
-      </Position7>
-      <Position8>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="36" Column="5"/>
-      </Position8>
-      <Position9>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="37" Column="5"/>
-      </Position9>
-      <Position10>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="38" Column="5"/>
-      </Position10>
-      <Position11>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="37" Column="5"/>
-      </Position11>
-      <Position12>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="38" Column="5"/>
-      </Position12>
-      <Position13>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="39" Column="5" TopLine="2"/>
-      </Position13>
-      <Position14>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="40" Column="5" TopLine="3"/>
-      </Position14>
-      <Position15>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="41" Column="5" TopLine="4"/>
-      </Position15>
-      <Position16>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="42" Column="5" TopLine="5"/>
-      </Position16>
-      <Position17>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="51" Column="5" TopLine="14"/>
-      </Position17>
-      <Position18>
         <Filename Value="unitmain.pas"/>
         <Caret Line="135" Column="56" TopLine="30"/>
-      </Position18>
-      <Position19>
+      </Position1>
+      <Position2>
         <Filename Value="unitmain.pas"/>
         <Caret Line="136" Column="40" TopLine="30"/>
-      </Position19>
-      <Position20>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="32" Column="32" TopLine="8"/>
-      </Position20>
-      <Position21>
+      </Position2>
+      <Position3>
         <Filename Value="unitmain.pas"/>
         <Caret Line="139" Column="43" TopLine="31"/>
-      </Position21>
-      <Position22>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="33" Column="28" TopLine="8"/>
-      </Position22>
-      <Position23>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="51" TopLine="14"/>
-      </Position23>
-      <Position24>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="56" TopLine="20"/>
-      </Position24>
-      <Position25>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="62" Column="37" TopLine="27"/>
-      </Position25>
-      <Position26>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="68" Column="36" TopLine="35"/>
-      </Position26>
-      <Position27>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="86" Column="69" TopLine="60"/>
-      </Position27>
-      <Position28>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="52" Column="15" TopLine="34"/>
-      </Position28>
-      <Position29>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="79" Column="38" TopLine="61"/>
-      </Position29>
-      <Position30>
-        <Filename Value="unitrecord.pas"/>
-        <Caret Line="78" Column="42" TopLine="61"/>
-      </Position30>
+      </Position3>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
