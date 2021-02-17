@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="haushalt.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -43,6 +43,14 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitMain"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="unitrecord.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="formRecord"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitRecord"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -5,7 +5,7 @@ unit unitMain;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Grids, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Grids, StdCtrls, unitRecord;
 
 type
 
@@ -23,6 +23,7 @@ type
     stringGrid: TStringGrid;
     procedure buttonCloseClick(Sender: TObject);
     procedure buttonLoadFileClick(Sender: TObject);
+    procedure buttonRecordClick(Sender: TObject);
     procedure buttonSaveFileClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -32,7 +33,6 @@ type
   public
   var
     fileToOpen, fileToSave: TextFile;
-
 
   end;
 
@@ -50,6 +50,7 @@ procedure TformMain.FormCreate(Sender: TObject);
 begin
   stringGrid.AutoSizeColumns();
 end;
+
 
 procedure TformMain.buttonLoadFileClick(Sender: TObject);
 var
@@ -126,6 +127,19 @@ begin
     CloseFile(fileToSave);
     ShowMessage('Es trat ein Fehler beim Speichern der Datei auf.');
   end;
+end;
+
+
+procedure TformMain.buttonRecordClick(Sender: TObject);
+begin
+  formRecord.editNumber.Caption := IntToStr(stringGrid.RowCount);
+  formRecord.dateEdit.Caption := dateToStr(Date());
+  formRecord.comboBoxExBuyer.ItemIndex := -1;
+  formRecord.currentBuyer := -1;
+  formRecord.floatSpinEditPrice.Caption := IntToStr(0);
+  formRecord.editDescription.Caption := '';
+
+  formRecord.ShowModal;
 end;
 
 

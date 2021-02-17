@@ -61,6 +61,7 @@ object formMain: TformMain
     Top = 112
     Width = 144
     Caption = 'Einkauf erfassen'
+    OnClick = buttonRecordClick
     TabOrder = 3
   end
   object buttonCalculate: TButton
