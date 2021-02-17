@@ -26,6 +26,7 @@ type
     labelNumber: TLabel;
     labelDate: TLabel;
     procedure buttonCloseClick(Sender: TObject);
+    procedure buttonSubmitClick(Sender: TObject);
     procedure comboBoxExBuyerChange(Sender: TObject);
   private
 
@@ -48,11 +49,53 @@ uses unitMain;
 
 procedure TformRecord.comboBoxExBuyerChange(Sender: TObject);
 begin
-  currentUser := comboBoxExBuyer.ItemIndex;
+  currentBuyer := comboBoxExBuyer.ItemIndex;
 end;
 
 
+procedure TformRecord.buttonSubmitClick(Sender: TObject);
+var
+  index: integer;
+  dataArray: array [0..4] of string;
+  // [0] - number
+  // [1] - date
+  // [2] - user
+  // [3] - price
+  // [4] - description
 
+begin
+  dataArray[0] := editNumber.Caption;
+  dataArray[1] := DateToStr(dateEdit.Date);
+
+  case currentBuyer of
+    0: dataArray[2] := 'Anika';
+    1: dataArray[2] := 'Florian';
+    2: dataArray[2] := 'Julia';
+    3: dataArray[2] := 'Sten';
+  end;
+
+  dataArray[3] := floatSpinEditPrice.Caption;
+  dataArray[4] := editDescription.Caption;
+
+  if (currentBuyer <> -1) then
+  begin
+    if (StrToFloat(dataArray[3]) <> 0) then
+    begin
+      formMain.stringGrid.RowCount := formMain.stringGrid.RowCount + 1;
+
+      for index := 0 to 4 do
+        formMain.stringGrid.cells[index, StrToInt(dataArray[0])] := dataArray[index];
+
+      editNumber.Caption := IntToStr(formMain.stringGrid.RowCount);
+      formMain.stringGrid.AutoSizeColumns();
+    end
+    else
+      ShowMessage('Es muss ein gültiger Kaufbetrag angegeben werden. {> 0}');
+  end
+  else
+    ShowMessage('Es muss ein gültiger Benutzer ausgewählt werden.');
+
+end;
 
 
 procedure TformRecord.buttonCloseClick(Sender: TObject);

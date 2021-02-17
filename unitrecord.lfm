@@ -112,6 +112,7 @@ object formRecord: TformRecord
     Top = 176
     Width = 80
     Caption = 'übernehmen'
+    OnClick = buttonSubmitClick
     TabOrder = 5
   end
   object buttonClose: TButton
