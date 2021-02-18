@@ -1,10 +1,10 @@
 object formStatistics: TformStatistics
   Left = 844
-  Height = 139
+  Height = 160
   Top = 179
   Width = 303
   Caption = 'Auswertung pro Person'
-  ClientHeight = 139
+  ClientHeight = 160
   ClientWidth = 303
   OnCreate = FormCreate
   LCLVersion = '2.0.10.0'
@@ -60,19 +60,14 @@ object formStatistics: TformStatistics
     ReadOnly = True
     TabOrder = 2
   end
-  object labelDebug: TLabel
-    Left = 16
-    Height = 15
-    Top = 114
-    Width = 5
-    Caption = '-'
-    Font.CharSet = ANSI_CHARSET
-    Font.Color = clSilver
-    Font.Height = -12
-    Font.Name = 'Segoe UI'
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    ParentColor = False
-    ParentFont = False
+  object buttonClose: TButton
+    Left = 213
+    Height = 25
+    Top = 120
+    Width = 75
+    Cancel = True
+    Caption = 'abbrechen'
+    OnClick = buttonCloseClick
+    TabOrder = 3
   end
 end

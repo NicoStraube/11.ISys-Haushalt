@@ -12,13 +12,14 @@ type
   { TformStatistics }
 
   TformStatistics = class(TForm)
+    buttonClose: TButton;
     comboBoxExUsers: TComboBoxEx;
     editOutgoings: TEdit;
     editDifference: TEdit;
-    labelDebug: TLabel;
     labelOutgoings: TLabel;
     labelBuyer: TLabel;
     labelDifference: TLabel;
+    procedure buttonCloseClick(Sender: TObject);
     procedure comboBoxExUsersChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -41,6 +42,7 @@ uses unitMain;
 
 { TformStatistics }
 
+
 procedure TformStatistics.FormCreate(Sender: TObject);
 begin
   possibleUsers := TStringList.Create;
@@ -50,6 +52,12 @@ end;
 procedure TformStatistics.comboBoxExUsersChange(Sender: TObject);
 begin
 
+end;
+
+
+procedure TformStatistics.buttonCloseClick(Sender: TObject);
+begin
+  Close();
 end;
 
 end.
