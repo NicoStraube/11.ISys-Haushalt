@@ -5,7 +5,8 @@ unit unitMain;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Grids, StdCtrls, unitRecord;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Grids, StdCtrls,
+  unitRecord, unitStatistics;
 
 type
 
