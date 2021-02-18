@@ -28,7 +28,6 @@ type
     possibleUsers: TStringList;
     currentUser: integer;
 
-
   end;
 
 var
