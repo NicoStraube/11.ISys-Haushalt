@@ -1,0 +1,8 @@
+object formStatistics: TformStatistics
+  Left = 844
+  Height = 240
+  Top = 179
+  Width = 320
+  Caption = 'Auswertung pro Person'
+  LCLVersion = '2.0.10.0'
+end
