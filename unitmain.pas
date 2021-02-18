@@ -24,6 +24,7 @@ type
     saveDialog: TSaveDialog;
     stringGrid: TStringGrid;
     procedure buttonCalculateClick(Sender: TObject);
+    procedure buttonCalculateOneClick(Sender: TObject);
     procedure buttonCloseClick(Sender: TObject);
     procedure buttonLoadFileClick(Sender: TObject);
     procedure buttonRecordClick(Sender: TObject);
@@ -69,10 +70,12 @@ begin
       reset(fileToOpen);
 
       repeat
+        // read all lines from the file & add another in the stringGrid if needed
         if (cellIndexY > stringGrid.RowCount - 1) then
           stringGrid.RowCount := stringGrid.RowCount + 1;
         ReadLn(fileToOpen, currentRow);
 
+        // loop through each col -> 'x'
         for cellIndexX := 0 to stringGrid.ColCount do
         begin
           if (cellIndexX <= stringGrid.ColCount - 1) then
@@ -123,13 +126,19 @@ begin
       AssignFile(fileToSave, saveDialog.FileName);
       Rewrite(fileToSave);
 
+      // loop through all rows -> 'y'
       for cellIndexY := 1 to stringGrid.RowCount - 1 do
       begin
+        // loop through all cols -> 'x'
         for cellIndexX := 0 to stringGrid.ColCount - 1 do
         begin
+          // prevent saving custom calculations
           if (cellIndexX <> (stringGrid.ColCount - 1)) then
-            Write(fileToSave, stringGrid.cells[cellIndexX, cellIndexY] + ';');
+            // write each cell one after one
+            Write(fileToSave, stringGrid.cells[cellIndexX,
+              cellIndexY].Replace(' €', '') + ';');
         end;
+        // jump to the next line
         WriteLn(fileToSave);
       end;
 
@@ -157,7 +166,10 @@ begin
   formRecord.floatSpinEditPrice.Caption := IntToStr(0);
   formRecord.editDescription.Caption := '';
 
-  formRecord.ShowModal;
+  formRecord.labelDebug.Font.Color := clSilver;
+  formRecord.labelDebug.Caption := '-';
+
+  formRecord.ShowModal();
 end;
 
 
@@ -167,25 +179,33 @@ var
   tmp: currency;
 
 begin
+  // check, if there are at least 2 datasets
   if (stringGrid.RowCount >= 3) then
+    // loop through all rows -> 'y'
     for cellIndexY := 1 to stringGrid.RowCount do
     begin
+      // get first dataset seperated to prevent 'null' calculation errors
       if (cellIndexY = 1) then
       begin
         cellIndexX := stringGrid.ColCount - 3;
-        tmp := StrToCurr(stringGrid.Cells[cellIndexX, cellIndexY].Replace(' €', ''));
+        tmp := StrToCurr(stringGrid.Cells[cellIndexX, cellIndexY].Replace(' €',
+          '').Replace('.', ''));
         stringGrid.cells[cellIndexX + 2, cellIndexY] := CurrToStrF(tmp, ffCurrency, 2);
       end
+      // stop operation if loop iterated through all datasets
       else if (cellIndexY = stringGrid.RowCount) then
       begin
         labelDebug.Font.Color := clGreen;
         labelDebug.Caption := TimeToStr(Time()) + ' » Operation beendet.';
       end
+      // get each dataset and do calculations
       else if (cellIndexY > 1) then
       begin
         cellIndexX := stringGrid.ColCount;
-        tmp := (StrToCurr(stringGrid.Cells[5, cellIndexY - 1].Replace(' €', '')) +
-          StrToCurr(stringGrid.Cells[cellIndexX - 3, cellIndexY].Replace(' €', '')));
+        tmp := (StrToCurr(stringGrid.Cells[5, cellIndexY - 1].Replace(' €',
+          '').Replace('.', '')) +
+          StrToCurr(stringGrid.Cells[cellIndexX - 3, cellIndexY].Replace(' €',
+          '').Replace('.', '')));
         stringGrid.cells[cellIndexX - 1, cellIndexY] := CurrToStrF(tmp, ffCurrency, 2);
       end;
     end
@@ -193,8 +213,54 @@ begin
   begin
     labelDebug.Font.Color := clRed;
     labelDebug.Caption := TimeToStr(Time()) +
-      ' » Summen können nicht berechnet werden - zu wenig Datensätze. ';
+      ' » Summen können nicht berechnet werden - zu wenig Datensätze vorhanden. ';
   end;
+end;
+
+procedure TformMain.buttonCalculateOneClick(Sender: TObject);
+var
+  index, listResult: integer;
+  cellIndexX, cellIndexY: integer;
+  possibleUser: string;
+
+begin
+  // check, if there is at least 1 dataset
+  if (stringGrid.RowCount >= 2) then
+  begin
+    formStatistics.comboBoxExUsers.ItemIndex := -1;
+    formStatistics.currentUser := -1;
+
+    formStatistics.labelDebug.Font.Color := clSilver;
+    formStatistics.labelDebug.Caption := '-';
+
+    formStatistics.possibleUsers.Clear;
+    formStatistics.comboBoxExUsers.Clear;
+
+    // get possible users
+    cellIndexX := 2;
+    for cellIndexY := 1 to stringGrid.RowCount - 1 do
+    begin
+      if (cellIndexY <= stringGrid.RowCount) then
+      begin
+        possibleUser := stringGrid.Cells[cellIndexX, cellIndexY];
+        listResult := formStatistics.possibleUsers.IndexOf(possibleUser);
+        if (listResult = -1) then
+        begin
+          formStatistics.possibleUsers.Add(possibleUser);
+          formStatistics.comboBoxExUsers.Add(possibleUser);
+        end;
+      end;
+    end;
+
+    formStatistics.ShowModal();
+  end
+  else
+  begin
+    labelDebug.Font.Color := clRed;
+    labelDebug.Caption := TimeToStr(Time()) +
+      ' » Statistiken können nicht geöffnet werden - zu wenig Datensätze vorhanden. ';
+  end;
+
 end;
 
 

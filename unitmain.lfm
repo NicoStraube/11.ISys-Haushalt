@@ -79,6 +79,7 @@ object formMain: TformMain
     Top = 192
     Width = 144
     Caption = 'Auswertung pro Person'
+    OnClick = buttonCalculateOneClick
     TabOrder = 5
   end
   object buttonClose: TButton
