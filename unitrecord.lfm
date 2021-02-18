@@ -89,7 +89,9 @@ object formRecord: TformRecord
     Top = 112
     Width = 104
     Increment = 0.5
+    MaxValue = 999999999999
     TabOrder = 3
+    Value = 1
   end
   object labelDescription: TLabel
     Left = 16
