@@ -48,6 +48,7 @@ uses unitMain;
 
 { TformRecord }
 
+
 procedure TformRecord.comboBoxExBuyerChange(Sender: TObject);
 begin
   currentBuyer := comboBoxExBuyer.ItemIndex;

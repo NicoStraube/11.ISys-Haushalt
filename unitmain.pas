@@ -230,9 +230,6 @@ begin
     formStatistics.comboBoxExUsers.ItemIndex := -1;
     formStatistics.currentUser := -1;
 
-    formStatistics.labelDebug.Font.Color := clSilver;
-    formStatistics.labelDebug.Caption := '-';
-
     formStatistics.possibleUsers.Clear;
     formStatistics.comboBoxExUsers.Clear;
 
