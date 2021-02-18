@@ -1,8 +1,78 @@
 object formStatistics: TformStatistics
   Left = 844
-  Height = 240
+  Height = 139
   Top = 179
-  Width = 320
+  Width = 303
   Caption = 'Auswertung pro Person'
+  ClientHeight = 139
+  ClientWidth = 303
+  OnCreate = FormCreate
   LCLVersion = '2.0.10.0'
+  object labelBuyer: TLabel
+    Left = 133
+    Height = 15
+    Top = 24
+    Width = 52
+    Caption = 'Einkäufer:'
+    ParentColor = False
+  end
+  object comboBoxExUsers: TComboBoxEx
+    Left = 200
+    Height = 22
+    Top = 16
+    Width = 88
+    ItemHeight = 16
+    ItemsEx = <>
+    OnChange = comboBoxExUsersChange
+    TabOrder = 0
+  end
+  object labelOutgoings: TLabel
+    Left = 32
+    Height = 15
+    Top = 56
+    Width = 153
+    Caption = 'Gesamtausgaben der Person:'
+    ParentColor = False
+  end
+  object editOutgoings: TEdit
+    Left = 200
+    Height = 23
+    Top = 48
+    Width = 88
+    NumbersOnly = True
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object labelDifference: TLabel
+    Left = 14
+    Height = 15
+    Top = 88
+    Width = 171
+    Caption = 'Differenz zum WG-Durchschnitt:'
+    ParentColor = False
+  end
+  object editDifference: TEdit
+    Left = 200
+    Height = 23
+    Top = 80
+    Width = 88
+    NumbersOnly = True
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object labelDebug: TLabel
+    Left = 16
+    Height = 15
+    Top = 114
+    Width = 5
+    Caption = '-'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clSilver
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
 end
