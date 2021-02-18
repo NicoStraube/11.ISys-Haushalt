@@ -158,7 +158,7 @@ end;
 procedure TformMain.buttonCalculateClick(Sender: TObject);
 var
   cellIndexX, cellIndexY: integer;
-  tmp: extended;
+  tmp: currency;
 
 begin
   if (stringGrid.RowCount >= 3) then
@@ -167,8 +167,8 @@ begin
       if (cellIndexY = 1) then
       begin
         cellIndexX := stringGrid.ColCount - 3;
-        tmp := StrToFloat(stringGrid.Cells[cellIndexX, cellIndexY]);
-        stringGrid.cells[cellIndexX + 2, cellIndexY] := FloatToStr(tmp);
+        tmp := StrToCurr(stringGrid.Cells[cellIndexX, cellIndexY]);
+        stringGrid.cells[cellIndexX + 2, cellIndexY] := CurrToStrF(tmp, ffCurrency, 2);
       end
       else if (cellIndexY = stringGrid.RowCount) then
       begin
@@ -178,9 +178,9 @@ begin
       else if (cellIndexY > 1) then
       begin
         cellIndexX := stringGrid.ColCount;
-        tmp := (StrToFloat(stringGrid.Cells[5, cellIndexY - 1]) +
-          StrToFloat(stringGrid.Cells[cellIndexX - 3, cellIndexY]));
-        stringGrid.cells[cellIndexX - 1, cellIndexY] := FloatToStr(tmp);
+        tmp := (StrToCurr(stringGrid.Cells[5, cellIndexY - 1].Replace(' €', '')) +
+          StrToCurr(stringGrid.Cells[cellIndexX - 3, cellIndexY]));
+        stringGrid.cells[cellIndexX - 1, cellIndexY] := CurrToStrF(tmp, ffCurrency, 2);
       end;
     end
   else
