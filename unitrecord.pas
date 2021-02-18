@@ -5,8 +5,8 @@ unit unitRecord;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, EditBtn,
-  CheckLst, ComboEx, Spin;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  EditBtn, ComboEx, Spin;
 
 type
 
@@ -75,16 +75,17 @@ begin
     3: dataArray[2] := 'Sten';
   end;
 
-  dataArray[3] := floatSpinEditPrice.Caption;
+  dataArray[3] := CurrToStrF(StrToCurr(floatSpinEditPrice.Caption), ffCurrency, 2);
   dataArray[4] := editDescription.Caption;
 
   if (currentBuyer <> -1) then
   begin
-    if (StrToFloat(dataArray[3]) <> 0) then
+    if (StrToCurr(dataArray[3].Replace(' €', '')) <> 0) then
     begin
       formMain.stringGrid.RowCount := formMain.stringGrid.RowCount + 1;
 
-      for index := 0 to 4 do
+      // iterate through the data-array & add the values to the stringGrid
+      for index := 0 to High(dataArray) do
         formMain.stringGrid.cells[index, StrToInt(dataArray[0])] := dataArray[index];
 
       editNumber.Caption := IntToStr(formMain.stringGrid.RowCount);
@@ -102,7 +103,6 @@ begin
     labelDebug.Font.Color := clRed;
     labelDebug.Caption := TimeToStr(Time()) + ' » Ungültiger Benutzer.';
   end;
-
 
 end;
 
