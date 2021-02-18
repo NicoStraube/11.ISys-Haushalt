@@ -19,6 +19,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitMain"/>
+        <IsVisibleTab Value="True"/>
         <CursorPos X="30" Y="9"/>
         <FoldState Value=" T3i8032 pj2jD0A2{"/>
         <UsageCount Value="25"/>
@@ -76,7 +77,6 @@
         <ComponentName Value="formStatistics"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitStatistics"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <CursorPos X="5" Y="27"/>
         <UsageCount Value="21"/>
