@@ -70,6 +70,7 @@ object formMain: TformMain
     Top = 160
     Width = 144
     Caption = 'Auswertung gesamt'
+    OnClick = buttonCalculateClick
     TabOrder = 4
   end
   object buttonCalculateOne: TButton
@@ -88,6 +89,21 @@ object formMain: TformMain
     Caption = 'Schließen'
     OnClick = buttonCloseClick
     TabOrder = 6
+  end
+  object labelDebug: TLabel
+    Left = 32
+    Height = 15
+    Top = 336
+    Width = 5
+    Caption = '-'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clSilver
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
   end
   object openDialog: TOpenDialog
     Left = 712

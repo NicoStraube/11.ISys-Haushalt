@@ -18,9 +18,11 @@ type
     buttonRecord: TButton;
     buttonLoadFile: TButton;
     buttonSaveFile: TButton;
+    labelDebug: TLabel;
     openDialog: TOpenDialog;
     saveDialog: TSaveDialog;
     stringGrid: TStringGrid;
+    procedure buttonCalculateClick(Sender: TObject);
     procedure buttonCloseClick(Sender: TObject);
     procedure buttonLoadFileClick(Sender: TObject);
     procedure buttonRecordClick(Sender: TObject);
@@ -89,12 +91,18 @@ begin
 
       CloseFile(fileToOpen);
       stringGrid.AutoSizeColumns();
-      ShowMessage(IntToStr(stringGrid.RowCount - 1) + ' Datensätze aus Datei ' +
-        openDialog.FileName + ' geladen.');
+
+      labelDebug.Font.Color := clGreen;
+      labelDebug.Caption := TimeToStr(Time()) + ' » ' +
+        IntToStr(stringGrid.RowCount - 1) + ' Datensätze aus Datei ' +
+        openDialog.FileName + ' geladen.';
+
     end;
   except
     CloseFile(fileToOpen);
-    ShowMessage('Es trat ein Fehler beim Einlesen der Datei aus.');
+    labelDebug.Font.Color := clRed;
+    labelDebug.Caption := TimeToStr(Time()) +
+      ' » Es trat ein Fehler beim Einlesen der Datei auf.';
   end;
 end;
 
@@ -120,12 +128,16 @@ begin
       end;
 
       CloseFile(fileToSave);
-      ShowMessage(IntToStr(stringGrid.RowCount - 1) + ' Datensätze in Datei ' +
-        saveDialog.FileName + ' gespeichert.');
+      labelDebug.Font.Color := clGreen;
+      labelDebug.Caption := TimeToStr(Time()) + ' » ' +
+        IntToStr(stringGrid.RowCount - 1) + ' Datensätze in Datei ' +
+        saveDialog.FileName + ' gespeichert.';
     end;
   except
     CloseFile(fileToSave);
-    ShowMessage('Es trat ein Fehler beim Speichern der Datei auf.');
+    labelDebug.Font.Color := clRed;
+    labelDebug.Caption := TimeToStr(Time()) +
+      ' » Es trat ein Fehler beim Speichern der Datei auf.';
   end;
 end;
 
@@ -140,6 +152,43 @@ begin
   formRecord.editDescription.Caption := '';
 
   formRecord.ShowModal;
+end;
+
+
+procedure TformMain.buttonCalculateClick(Sender: TObject);
+var
+  cellIndexX, cellIndexY: integer;
+  tmp: extended;
+
+begin
+  if (stringGrid.RowCount >= 3) then
+    for cellIndexY := 1 to stringGrid.RowCount do
+    begin
+      if (cellIndexY = 1) then
+      begin
+        cellIndexX := stringGrid.ColCount - 3;
+        tmp := StrToFloat(stringGrid.Cells[cellIndexX, cellIndexY]);
+        stringGrid.cells[cellIndexX + 2, cellIndexY] := FloatToStr(tmp);
+      end
+      else if (cellIndexY = stringGrid.RowCount) then
+      begin
+        labelDebug.Font.Color := clGreen;
+        labelDebug.Caption := TimeToStr(Time()) + ' » Operation beendet.';
+      end
+      else if (cellIndexY > 1) then
+      begin
+        cellIndexX := stringGrid.ColCount;
+        tmp := (StrToFloat(stringGrid.Cells[5, cellIndexY - 1]) +
+          StrToFloat(stringGrid.Cells[cellIndexX - 3, cellIndexY]));
+        stringGrid.cells[cellIndexX - 1, cellIndexY] := FloatToStr(tmp);
+      end;
+    end
+  else
+  begin
+    labelDebug.Font.Color := clRed;
+    labelDebug.Caption := TimeToStr(Time()) +
+      ' » Summen können nicht berechnet werden - zu wenig Datensätze. ';
+  end;
 end;
 
 

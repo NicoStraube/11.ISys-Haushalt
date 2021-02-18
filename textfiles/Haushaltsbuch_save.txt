@@ -1,4 +1,9 @@
-1;17.02.2021;Florian;0,50;;
-2;17.02.2021;Florian;0,50;;
-3;17.02.2021;Florian;0,50;;
-4;17.02.2021;Anika;1,50;Das ist ein Test, ein fiktionaler Einkauf. Die Spalte muss sehr lang werden. Mal gucken, was mit dem StringGrid passiert :);
+1;13.05.2008;Anika;24,92;Einkauf Drogeriemarkt;
+2;14.05.2008;Sten;8,25;Brot + Brötchen;
+3;14.05.2008;Julia;99,64;Großeinkauf Wochenende;
+4;17.05.2008;Sten;7,48;Brötchen, Käse und Milch;
+5;18.05.2008;Florian;33,99;neuer Toaster;
+6;19.05.2008;Sten;2,99;Kaffee;
+7;21.05.2008;Sten;43,87;Wochenendeinkauf;
+8;21.05.2008;Anika;5,72;Staubsaugerbeutel;
+9;22.05.2008;Florian;12,58;Brötchen und Kuchen;
