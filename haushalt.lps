@@ -19,9 +19,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitMain"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="34"/>
-        <CursorPos Y="59"/>
+        <CursorPos X="37" Y="48"/>
         <FoldState Value=" T3i9032 pjAjL0D[940]93b"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
@@ -34,9 +32,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitRecord"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="22"/>
-        <CursorPos Y="57"/>
+        <CursorPos X="25" Y="40"/>
         <FoldState Value=" T3i7032S"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
@@ -79,8 +78,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitStatistics"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="19"/>
-        <CursorPos X="5" Y="49"/>
+        <TopLine Value="12"/>
+        <CursorPos Y="30"/>
+        <FoldState Value=" T3i0031o"/>
         <UsageCount Value="33"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
