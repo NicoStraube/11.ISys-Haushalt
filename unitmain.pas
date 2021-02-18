@@ -172,7 +172,7 @@ begin
       if (cellIndexY = 1) then
       begin
         cellIndexX := stringGrid.ColCount - 3;
-        tmp := StrToCurr(stringGrid.Cells[cellIndexX, cellIndexY]);
+        tmp := StrToCurr(stringGrid.Cells[cellIndexX, cellIndexY].Replace(' €', ''));
         stringGrid.cells[cellIndexX + 2, cellIndexY] := CurrToStrF(tmp, ffCurrency, 2);
       end
       else if (cellIndexY = stringGrid.RowCount) then
@@ -184,7 +184,7 @@ begin
       begin
         cellIndexX := stringGrid.ColCount;
         tmp := (StrToCurr(stringGrid.Cells[5, cellIndexY - 1].Replace(' €', '')) +
-          StrToCurr(stringGrid.Cells[cellIndexX - 3, cellIndexY]));
+          StrToCurr(stringGrid.Cells[cellIndexX - 3, cellIndexY].Replace(' €', '')));
         stringGrid.cells[cellIndexX - 1, cellIndexY] := CurrToStrF(tmp, ffCurrency, 2);
       end;
     end
