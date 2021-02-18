@@ -77,8 +77,13 @@ begin
           if (cellIndexX <= stringGrid.ColCount - 1) then
           begin
             currentPosition := Pos(';', currentRow);
-            stringGrid.cells[cellIndexX, cellIndexY] :=
-              Copy(currentRow, 1, currentPosition - 1);
+            if (cellIndexX = 3) then
+              stringGrid.cells[cellIndexX, cellIndexY] :=
+                Copy(currentRow, 1, currentPosition - 1) + ' €'
+            else
+              stringGrid.cells[cellIndexX, cellIndexY] :=
+                Copy(currentRow, 1, currentPosition - 1);
+
             Delete(currentRow, 1, currentPosition);
           end;
 
