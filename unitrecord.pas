@@ -20,6 +20,7 @@ type
     editDescription: TEdit;
     editNumber: TEdit;
     floatSpinEditPrice: TFloatSpinEdit;
+    labelDebug: TLabel;
     labelDescription: TLabel;
     labelPrice: TLabel;
     labelBuyer: TLabel;
@@ -90,10 +91,18 @@ begin
       formMain.stringGrid.AutoSizeColumns();
     end
     else
-      ShowMessage('Es muss ein gültiger Kaufbetrag angegeben werden. {> 0}');
+    begin
+      labelDebug.Font.Color := clRed;
+      labelDebug.Caption := TimeToStr(Time()) +
+        ' » Ungültiger Kaufbetrag. {> 0}';
+    end;
   end
   else
-    ShowMessage('Es muss ein gültiger Benutzer ausgewählt werden.');
+  begin
+    labelDebug.Font.Color := clRed;
+    labelDebug.Caption := TimeToStr(Time()) + ' » Ungültiger Benutzer.';
+  end;
+
 
 end;
 

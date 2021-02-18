@@ -19,9 +19,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitMain"/>
-        <TopLine Value="30"/>
-        <CursorPos Y="163"/>
-        <FoldState Value=" T3i7032 pj2jD0A20"/>
+        <TopLine Value="161"/>
+        <CursorPos X="9" Y="180"/>
+        <FoldState Value=" T3i7032 pj2jD0A011V"/>
         <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -35,9 +35,9 @@
         <UnitName Value="unitRecord"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="57"/>
-        <CursorPos Y="56"/>
-        <FoldState Value=" T3i603011i"/>
+        <TopLine Value="68"/>
+        <CursorPos X="70" Y="97"/>
+        <FoldState Value=" T3i703011n"/>
         <UsageCount Value="24"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -74,7 +74,7 @@
         <UsageCount Value="10"/>
       </Unit6>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="unitmain.pas"/>
         <Caret Line="154" Column="47" TopLine="55"/>
@@ -191,6 +191,10 @@
         <Filename Value="unitmain.pas"/>
         <Caret Line="172" Column="63" TopLine="148"/>
       </Position29>
+      <Position30>
+        <Filename Value="unitrecord.pas"/>
+        <Caret Line="93" Column="75" TopLine="66"/>
+      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
