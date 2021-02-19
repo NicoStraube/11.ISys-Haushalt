@@ -27,7 +27,6 @@ type
   public
   var
     possibleUsers: TStringList;
-    currentUser: integer;
 
   end;
 
@@ -49,9 +48,44 @@ begin
 end;
 
 
-procedure TformStatistics.comboBoxExUsersChange(Sender: TObject);
+function getPriceSumOfCurrentUser(user: string): currency;
+var
+  cellIndexX, cellIndexY: integer;
+  possibleUser: string;
+  tmp: currency = 0.0;
 begin
+  cellIndexX := 2;
+  for cellIndexY := 1 to formMain.stringGrid.RowCount - 1 do
+  begin
+    if (cellIndexY <= formMain.stringGrid.RowCount) then
+    begin
+      possibleUser := formMain.stringGrid.Cells[cellIndexX, cellIndexY];
+      if (possibleUser = user) then
+      begin
+        tmp := tmp + StrToCurr(formMain.stringGrid.Cells[cellIndexX +
+          1, cellIndexY].Replace(' €', '').Replace('.', ''));
+      end;
+    end;
+  end;
 
+  Result := tmp;
+end;
+
+procedure TformStatistics.comboBoxExUsersChange(Sender: TObject);
+var
+  difference, subtract: currency;
+begin
+  // sum all prices based on the current user
+  subtract := getPriceSumOfCurrentUser(
+    comboBoxExUsers.ItemsEx.Items[comboBoxExUsers.ItemIndex].Caption);
+
+  editOutgoings.Caption := currToStrF(subtract, ffCurrency, 2);
+
+  difference := StrToCurr(formMain.stringGrid.Cells[formMain.stringGrid.ColCount -
+    1, formMain.stringGrid.RowCount - 1].Replace(' €', '').Replace('.', '')) /
+    FloatToCurr(possibleUsers.Count);
+
+  editDifference.Caption := CurrToStrF(difference - subtract, ffCurrency, 2);
 end;
 
 
