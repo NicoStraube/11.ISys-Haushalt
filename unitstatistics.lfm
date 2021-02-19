@@ -4,8 +4,8 @@ object formStatistics: TformStatistics
   Top = 179
   Width = 303
   Caption = 'Auswertung pro Person'
-  ClientHeight = 160
-  ClientWidth = 303
+  ClientHeight = 0
+  ClientWidth = 0
   OnCreate = FormCreate
   LCLVersion = '2.0.10.0'
   object labelBuyer: TLabel
