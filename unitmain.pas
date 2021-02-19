@@ -172,8 +172,7 @@ begin
   formRecord.ShowModal();
 end;
 
-
-procedure TformMain.buttonCalculateClick(Sender: TObject);
+procedure calculateAll(stringGrid: TStringGrid; labelDebug: TLabel);
 var
   cellIndexX, cellIndexY: integer;
   tmp: currency;
@@ -217,6 +216,11 @@ begin
   end;
 end;
 
+procedure TformMain.buttonCalculateClick(Sender: TObject);
+begin
+  calculateAll(stringGrid, labelDebug);
+end;
+
 procedure TformMain.buttonCalculateOneClick(Sender: TObject);
 var
   index, listResult: integer;
@@ -225,10 +229,9 @@ var
 
 begin
   // check, if there is at least 1 dataset
-  if (stringGrid.RowCount >= 2) then
+  if (stringGrid.RowCount >= 3) then
   begin
     formStatistics.comboBoxExUsers.ItemIndex := -1;
-    formStatistics.currentUser := -1;
 
     formStatistics.possibleUsers.Clear;
     formStatistics.comboBoxExUsers.Clear;
@@ -249,6 +252,10 @@ begin
       end;
     end;
 
+    formStatistics.editOutgoings.Caption := '';
+    formStatistics.editDifference.Caption := '';
+
+    calculateAll(stringGrid, labelDebug);
     formStatistics.ShowModal();
   end
   else
@@ -257,7 +264,6 @@ begin
     labelDebug.Caption := TimeToStr(Time()) +
       ' » Statistiken können nicht geöffnet werden - zu wenig Datensätze vorhanden. ';
   end;
-
 end;
 
 
