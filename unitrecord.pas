@@ -81,7 +81,7 @@ begin
 
   if (currentBuyer <> -1) then
   begin
-    if (StrToCurr(dataArray[3].Replace(' €', '')) <> 0) then
+    if (StrToCurr(dataArray[3].Replace(' €', '').Replace('.', '')) <> 0) then
     begin
       formMain.stringGrid.RowCount := formMain.stringGrid.RowCount + 1;
 
