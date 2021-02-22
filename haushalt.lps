@@ -19,6 +19,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitMain"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="35"/>
         <CursorPos Y="224"/>
         <FoldState Value=" T3i9032 pjAjL0D3]92jO03r"/>
@@ -115,11 +116,9 @@
       <Unit12>
         <Filename Value="..\Test\unit1.pas"/>
         <UnitName Value="Unit1"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit12>
     </Units>
     <JumpHistory HistoryIndex="-1"/>
