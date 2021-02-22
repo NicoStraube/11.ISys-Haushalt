@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="12">
+    <Units Count="13">
       <Unit0>
         <Filename Value="haushalt.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -19,7 +19,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitMain"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="35"/>
         <CursorPos Y="224"/>
         <FoldState Value=" T3i9032 pjAjL0D3]92jO03r"/>
@@ -51,7 +50,6 @@
         <TopLine Value="18"/>
         <CursorPos X="2" Y="50"/>
         <FoldState Value=" T3i1033/"/>
-        <ComponentState Value="1"/>
         <UsageCount Value="47"/>
       </Unit3>
       <Unit4>
@@ -114,6 +112,15 @@
         <CursorPos X="14" Y="404"/>
         <UsageCount Value="10"/>
       </Unit11>
+      <Unit12>
+        <Filename Value="..\Test\unit1.pas"/>
+        <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="55"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit12>
     </Units>
     <JumpHistory HistoryIndex="-1"/>
     <RunParams>
